@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class EchoServer {
     public static void main(String[] args) {
         int port = 4243; 
+
+        if(args.length > 0) port = Integer.parseInt(args[0]); 
         try {
             
         } catch (IOException ioe) {
