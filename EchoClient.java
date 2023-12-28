@@ -35,6 +35,11 @@ public class EchoClient {
             String response = netIn.nextLine(); 
             netIn.println(response);
 
+            //Close streams
+            netOut.close();
+            netIn.close();
+            socke.close();
+
         } catch (IOException ioe) {
             System.out.println("Problem connecting" + ioe.getMessage()); 
         }
