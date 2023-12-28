@@ -24,7 +24,7 @@ public class EchoClient {
             String message = input.nextLine(); 
 
             //Send the message to the server
-            PrintWriter netOut = new PrintWriter(sock.getOutputStream());
+            PrintWriter netOut = new PrintWriter(newSock.getOutputStream());
             netOut.println(message); 
             
             //The output is buffered, so force to send it
