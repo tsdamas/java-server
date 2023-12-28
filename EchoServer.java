@@ -25,7 +25,12 @@ public class EchoServer {
                 //Print the client's port
                 System.out.println("The remote client's port is " + client.getPort()); 
 
-                
+                //Read message from the client
+                Scanner input = new Scanner(client.getInputStream());
+                message = input.nextLine(); 
+
+
+
             }
 
             
