@@ -4,6 +4,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
+import javax.print.attribute.standard.PrinterInfo;
+
 public class EchoServer {
     public static void main(String[] args) {
         int port = 4243; 
@@ -28,6 +30,17 @@ public class EchoServer {
                 //Read message from the client
                 Scanner input = new Scanner(client.getInputStream());
                 message = input.nextLine(); 
+
+                //Send message to client
+                PrintWriter output = new PrintWriter(client.getOutputStream());
+                String response = "Message received. The message was " + message; 
+                output.println(response);
+                output.flush();
+
+                
+
+
+
 
 
 
