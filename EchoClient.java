@@ -33,12 +33,12 @@ public class EchoClient {
             //Create a stream to receive inputs from server
             Scanner netIn = new Scanner(newSock.getInputStream()); 
             String response = netIn.nextLine(); 
-            netIn.println(response);
+            System.out.println(response);
 
             //Close streams
             netOut.close();
             netIn.close();
-            socke.close();
+            newSock.close();
 
         } catch (IOException ioe) {
             System.out.println("Problem connecting" + ioe.getMessage()); 
