@@ -16,6 +16,18 @@ public class EchoServer {
             //Show connection by printing port
             System.out.println("The port used is " + sock.getLocalPort()); 
 
+            String message = "";
+
+            while(!message.equalsIgnoreCase("quit")) {
+                //Accept connection with the client
+                Socket client = sock.accept(); 
+
+                //Print the client's port
+                System.out.println("The remote client's port is " + client.getPort()); 
+
+                
+            }
+
             
 
             
