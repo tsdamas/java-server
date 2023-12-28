@@ -17,7 +17,19 @@ public class EchoClient {
 
             //Get the local port on the client
             System.out.println("The local port is " + newSock.getLocalPort()); 
+
+            //Ask user what message to send to the server
+            Scanner input = new Scanner(System.in); 
+            System.out.print("Please enter the message to send: ");
+            String message = input.nextLine(); 
+
+            //Send the message to the server
+            PrintWriter netOut = new PrintWriter(sock.getOutputStream());
+            netOut.println(message); 
             
+            //The output is buffered, so force to send it
+            netOut.flush(); 
+
         } catch (IOException ioe) {
             System.out.println("Problem connecting" + ioe.getMessage()); 
         }
