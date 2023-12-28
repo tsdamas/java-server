@@ -30,6 +30,11 @@ public class EchoClient {
             //The output is buffered, so force to send it
             netOut.flush(); 
 
+            //Create a stream to receive inputs from server
+            Scanner netIn = new Scanner(newSock.getInputStream()); 
+            String response = netIn.nextLine(); 
+            netIn.println(response);
+
         } catch (IOException ioe) {
             System.out.println("Problem connecting" + ioe.getMessage()); 
         }
