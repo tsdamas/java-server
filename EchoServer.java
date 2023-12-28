@@ -37,18 +37,13 @@ public class EchoServer {
                 output.println(response);
                 output.flush();
 
-                
-
-
-
-
-
-
+                //Close streams
+                input.close();
+                output.close();
+                client.close();
             }
 
-            
-
-            
+            sock.close();
         } catch (IOException ioe) {
             System.out.println("Problem connecting" + ioe.getMessage()); 
         }
